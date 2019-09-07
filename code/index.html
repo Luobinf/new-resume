@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>个人简历</title>
+  <link rel="stylesheet" href="./loading.css">
+  <link rel="stylesheet" href="./main.css">
+  <script src="http://at.alicdn.com/t/font_451045_32zbfqegtq3t0529.js"></script>
+  <style type="text/css">
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site-welcome active" id="siteWelcome">
+      <div class="loading"></div>
+  </div>
+  <div class="topNavBar" id="topNavBar">
+    <div class="topNavBar-inner clearfix">
+      <a class="logo" href="#" alt="logo" style="float: left;">
+        <span class="rs">RS</span>
+        <span class="card">card</span>
+      </a>
+      <nav style="float: right;">
+        <ul class="clearfix">
+          <li>
+            <a href="#siteAbout">关于</a>
+          </li>
+          <li>
+            <a href="#siteSkills">技能</a>
+          </li>
+          <li class="menuTigger">
+            <a href="#siteWorks">作品</a>
+            <ul class="submenu">
+              <li>作品一</li>
+              <li>作品二</li>
+              <li>作品三</li>
+            </ul>
+          </li>
+          <li class="menuTigger">
+            <a href="#">博客</a>
+            <ul class="submenu">
+                <li>博客一</li>
+                <li>博客二</li>
+                <li>博客三</li>
+              </ul>
+          </li>
+          <li>
+            <a href="#">日历</a>
+          </li>
+          <li>
+            <a href="#">联系方式</a>
+          </li>
+          <li>
+            <a href="#">其他</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="banner">
+    <div class="mask"></div>
+  </div>
+  <main>
+    <div class="userCard" id="siteAbout" data-x="">
+      <div class="pictureAndText clearfix">
+        <div class="picture">
+          <img src="./img/avatar.jpg" width=299 height=347 alt="头像">
+        </div>
+        <div class="text">
+          <span class="welcome">Hello
+            <span class="triangle"></span>
+          </span>
+          <h1>Robert Smith</h1>
+          <p>前端开发工程师</p>
+          <hr>
+          <dl>
+            <dt>年龄</dt>
+            <dd>23</dd>
+            <dt>所在城市</dt>
+            <dd>杭州</dd>
+            <dt>邮箱</dt>
+            <dd>1096422441@qq.com</dd>
+            <dt>手机</dt>
+            <dd>19975864125</dd>
+          </dl>
+        </div>
+      </div>
+      <footer class="media">
+        <a href="#">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-github"></use>
+          </svg>
+        </a>
+        <a href="#">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-Ankerwebicon-"></use>
+          </svg>
+        </a>
+        <a href="#">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-weibo"></use>
+          </svg>
+        </a>
+      </footer>
+    </div>
+
+    <p class="downloadResume-wrapper">
+      <a class="downloadResume" href="./resume.pdf" target="_blank" download>下载 PDF 简历</a>
+    </p>
+
+    <p class="selfIntroduction">
+      Hello! I’m Robert Smith. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.
+      <br> skills: front end development
+    </p>
+
+  </main>
+  <section class="skills" id="siteSkills" data-x="">
+    <h2>技能</h2>
+    <ol class="clearfix">
+      <li>
+        <h3>
+          HTML 5 &amp; CSS 3
+        </h3>
+        <div class="progressBar">
+          <div class="progress" style="width: 10%;"></div>
+        </div>
+      </li>
+      <li>
+        <h3>
+          JavaScript
+        </h3>
+        <div class="progressBar">
+          <div class="progress" style="width: 20%"></div>
+        </div>
+      </li>
+      <li>
+        <h3>
+          jQuery
+        </h3>
+        <div class="progressBar">
+          <div class="progress" style="width: 30%"></div>
+        </div>
+      </li>
+      <li>
+        <h3>
+          Vue.js
+        </h3>
+        <div class="progressBar">
+          <div class="progress" style="width: 40%"></div>
+        </div>
+      </li>
+      <li>
+        <h3>
+          React.js
+        </h3>
+        <div class="progressBar">
+          <div class="progress"  style="width: 50%"></div>
+        </div>
+      </li>
+      <li>
+        <h3>
+          Node.js
+        </h3>
+        <div class="progressBar">
+          <div class="progress"  style="width: 60%"></div>
+        </div>
+      </li>
+    </ol>
+  </section>
+  <section class="portfolio" id="siteWorks" data-x="">
+    <h2>作品集</h2>
+    <nav>
+      <ol class="clearfix">
+        <li id="portfolio1">所有</li>
+        <li id="portfolio2">框架</li>
+        <li id="portfolio3">原生JS&amp;CSS</li>
+      </ol>
+      <div id="portfolioBar" class="bar state-1">
+        <div class="bar-inner"></div>
+      </div>
+    </nav>
+    <script>
+      portfolio1.onclick= function(){
+        portfolioBar.className = 'bar state-1'
+      }
+      portfolio2.onclick= function(){
+        portfolioBar.className = 'bar state-2'
+      }
+      portfolio3.onclick= function(){
+        portfolioBar.className = 'bar state-3'
+      }
+    </script>
+
+
+    <div class="works" style="height: 597px;">
+      <div class="big" style="top: 0; left: 0;">
+        <img src="./img/1.jpg" alt="作品1">
+      </div>
+      <div class="small" style="top: 0; left: 645px;">
+        <img src="./img/2.jpg" alt="作品2">
+      </div>
+      <div class="small" style="top: 312px; left: 645px;">
+        <img src="./img/3.jpg" alt="作品3">
+      </div>
+    </div>
+
+  </section>
+  <script>
+    //当html解析到这里时，说明前面已经加载成功了
+    setTimeout(() => {
+      siteWelcome.classList.remove('active')
+    }, 100)
+    let specialAtags = document.querySelectorAll('[data-x]')
+    for (let i=0;i<specialAtags.length;i++) {
+      specialAtags[i].classList.add('separate')
+      }
+    setTimeout(function () {
+      yyy()
+    }, 200)
+    window.onscroll = function (event) {
+      // console.log(window.pageYOffset)
+      // console.log(window.scrollY) //滚动距离这个也可以获取,建议用上面那个
+      if (window.scrollY > 0) {
+        topNavBar.classList.add('sticky')
+      } else {
+        topNavBar.classList.remove('sticky')
+      }
+      yyy()
+    }
+
+    function yyy() {
+      let specialAtags = document.querySelectorAll('[data-x]')
+      let minIndex = 0
+      for (let i=1;i<specialAtags.length;i++) {
+        if (Math.abs(specialAtags[i].offsetTop - window.pageYOffset) < Math.abs(specialAtags[minIndex].offsetTop - window.pageYOffset)) {
+          minIndex = i
+        }
+      }
+      //minIndex就是离屏幕顶部最近的元素
+      specialAtags[minIndex].classList.remove('separate')
+      let id = specialAtags[minIndex].id
+      let a = document.querySelector(`a[href="#${id}"]`)
+      let li = a.parentElement
+      let liBrothers = li.parentElement.children
+      for (let i = 0;i < liBrothers.length;i++) {
+        liBrothers[i].classList.remove('highlight')
+      }
+      li.classList.add('highlight')
+    }
+    let liTags = document.querySelectorAll('nav > ul > li')
+    for (let i=0;i<liTags.length;i++) {
+      liTags[i].onmouseenter = function (event) {
+        event.currentTarget.classList.add('active')     
+      }
+      liTags[i].onmouseleave = function (event) {
+        event.currentTarget.classList.remove('active')
+      }
+    }
+
+    //点击顶部导航栏滚动到相应的章节部分
+    let aTags = document.querySelectorAll('nav > ul > li > a')
+    for (let i=0;i<aTags.length;i++) {
+      aTags[i].onclick = function (event) {
+        event.preventDefault()
+        let a = event.currentTarget
+        // console.log(a.href) 注意href是带有http协议的(被浏览器处理过的),用getAttribute
+        // console.log(a.getAttribute('href'))  //'#siteAbout'
+        let href = a.getAttribute('href')
+        let element = document.querySelector(href)
+        //element.getBoundingClientRect()获取元素相对于浏览器视口的位置
+        let coords = element.getBoundingClientRect()
+        //那么要获取相对于页面的位置应该如何获取，只要加上滚动出去的距离即可
+        // console.log(coords.left + window.pageXOffset,coords.top + window.pageYOffset)
+        // let left = coords.left + window.pageXOffset
+        let top = coords.top + window.pageYOffset //下面那一句也可以
+        // let top = element.offsetTop
+        window.scrollTo(0,top - 70)
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -5,6 +5,7 @@
   <title>个人简历</title>
   <link rel="stylesheet" href="./loading.css">
   <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
   <script src="http://at.alicdn.com/t/font_451045_32zbfqegtq3t0529.js"></script>
   <style type="text/css">
     .icon {
@@ -19,7 +20,7 @@
 
 <body>
   <div class="site-welcome active" id="siteWelcome">
-      <div class="loading"></div>
+    <div class="loading"></div>
   </div>
   <div class="topNavBar" id="topNavBar">
     <div class="topNavBar-inner clearfix">
@@ -46,10 +47,10 @@
           <li class="menuTigger">
             <a href="#">博客</a>
             <ul class="submenu">
-                <li>博客一</li>
-                <li>博客二</li>
-                <li>博客三</li>
-              </ul>
+              <li>博客一</li>
+              <li>博客二</li>
+              <li>博客三</li>
+            </ul>
           </li>
           <li>
             <a href="#">日历</a>
@@ -116,7 +117,9 @@
     </p>
 
     <p class="selfIntroduction">
-      Hello! I’m Robert Smith. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.
+      Hello! I’m Robert Smith. Senior Web Developer specializing in front end development. Experienced with all stages
+      of the development cycle for dynamic web projects. Well-versed in numerous programming languages including
+      JavaScript, SQL, and C. Stng background in project management and customer relations.
       <br> skills: front end development
     </p>
 
@@ -161,7 +164,7 @@
           React.js
         </h3>
         <div class="progressBar">
-          <div class="progress"  style="width: 50%"></div>
+          <div class="progress" style="width: 50%"></div>
         </div>
       </li>
       <li>
@@ -169,122 +172,60 @@
           Node.js
         </h3>
         <div class="progressBar">
-          <div class="progress"  style="width: 60%"></div>
+          <div class="progress" style="width: 60%"></div>
         </div>
       </li>
     </ol>
   </section>
   <section class="portfolio" id="siteWorks" data-x="">
     <h2>作品集</h2>
-    <nav>
-      <ol class="clearfix">
-        <li id="portfolio1">所有</li>
-        <li id="portfolio2">框架</li>
-        <li id="portfolio3">原生JS&amp;CSS</li>
-      </ol>
-      <div id="portfolioBar" class="bar state-1">
-        <div class="bar-inner"></div>
-      </div>
-    </nav>
-    <script>
-      portfolio1.onclick= function(){
-        portfolioBar.className = 'bar state-1'
-      }
-      portfolio2.onclick= function(){
-        portfolioBar.className = 'bar state-2'
-      }
-      portfolio3.onclick= function(){
-        portfolioBar.className = 'bar state-3'
-      }
-    </script>
-
-
-    <div class="works" style="height: 597px;">
-      <div class="big" style="top: 0; left: 0;">
-        <img src="./img/1.jpg" alt="作品1">
-      </div>
-      <div class="small" style="top: 0; left: 645px;">
-        <img src="./img/2.jpg" alt="作品2">
-      </div>
-      <div class="small" style="top: 312px; left: 645px;">
-        <img src="./img/3.jpg" alt="作品3">
+    <!-- 下面变成轮播 -->
+    <!-- slides就是view -->
+    <div id="slides">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <img class="swiper-slide" src="./works/canvas.png">
+          <img class="swiper-slide" src="./works/swiper.png">
+          <img class="swiper-slide" src="./works/web.png">
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
     </div>
 
   </section>
+  <section class="message">
+    <h2>留言</h2>
+    <ol id="messageList">
+      
+    </ol>
+    <form style="width: 700px;height:200px;margin: 10px auto;" id="postMessageForm">
+      <label for="">姓名</label>
+      <input type="text" name="name">
+      <label for="">内容</label>
+      <input type="text" name="content">
+      <input type="submit" value="提交">
+    </form>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.15.0/dist/av-min.js"></script>
+  <script src="./js/base/View.js"></script>
+  <script src="./js/base/Model.js"></script>
+
+
+  <!-- 模块化 -->
+  <script src="./js/init-swiper.js"></script>
+  <script src="./js/auto-slide-up.js"></script>
+  <script src="./js/sticky-topbar.js"></script>
+  <script src="./js/smoothly-navigation.js"></script>
+  <script src="./js/message.js"></script>
   <script>
     //当html解析到这里时，说明前面已经加载成功了
-    setTimeout(() => {
-      siteWelcome.classList.remove('active')
-    }, 100)
-    let specialAtags = document.querySelectorAll('[data-x]')
-    for (let i=0;i<specialAtags.length;i++) {
-      specialAtags[i].classList.add('separate')
-      }
-    setTimeout(function () {
-      yyy()
-    }, 200)
-    window.onscroll = function (event) {
-      // console.log(window.pageYOffset)
-      // console.log(window.scrollY) //滚动距离这个也可以获取,建议用上面那个
-      if (window.scrollY > 0) {
-        topNavBar.classList.add('sticky')
-      } else {
-        topNavBar.classList.remove('sticky')
-      }
-      yyy()
-    }
+    siteWelcome.classList.remove('active')
 
-    function yyy() {
-      let specialAtags = document.querySelectorAll('[data-x]')
-      let minIndex = 0
-      for (let i=1;i<specialAtags.length;i++) {
-        if (Math.abs(specialAtags[i].offsetTop - window.pageYOffset) < Math.abs(specialAtags[minIndex].offsetTop - window.pageYOffset)) {
-          minIndex = i
-        }
-      }
-      //minIndex就是离屏幕顶部最近的元素
-      specialAtags[minIndex].classList.remove('separate')
-      let id = specialAtags[minIndex].id
-      let a = document.querySelector(`a[href="#${id}"]`)
-      let li = a.parentElement
-      let liBrothers = li.parentElement.children
-      for (let i = 0;i < liBrothers.length;i++) {
-        liBrothers[i].classList.remove('highlight')
-      }
-      li.classList.add('highlight')
-    }
-    let liTags = document.querySelectorAll('nav > ul > li')
-    for (let i=0;i<liTags.length;i++) {
-      liTags[i].onmouseenter = function (event) {
-        event.currentTarget.classList.add('active')     
-      }
-      liTags[i].onmouseleave = function (event) {
-        event.currentTarget.classList.remove('active')
-      }
-    }
-
-    //点击顶部导航栏滚动到相应的章节部分
-    let aTags = document.querySelectorAll('nav > ul > li > a')
-    for (let i=0;i<aTags.length;i++) {
-      aTags[i].onclick = function (event) {
-        event.preventDefault()
-        let a = event.currentTarget
-        // console.log(a.href) 注意href是带有http协议的(被浏览器处理过的),用getAttribute
-        // console.log(a.getAttribute('href'))  //'#siteAbout'
-        let href = a.getAttribute('href')
-        let element = document.querySelector(href)
-        //element.getBoundingClientRect()获取元素相对于浏览器视口的位置
-        let coords = element.getBoundingClientRect()
-        //那么要获取相对于页面的位置应该如何获取，只要加上滚动出去的距离即可
-        // console.log(coords.left + window.pageXOffset,coords.top + window.pageYOffset)
-        // let left = coords.left + window.pageXOffset
-        let top = coords.top + window.pageYOffset //下面那一句也可以
-        // let top = element.offsetTop
-        window.scrollTo(0,top - 70)
-      }
-    }
   </script>
+
 </body>
 
 </html>
